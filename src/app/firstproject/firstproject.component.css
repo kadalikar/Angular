@@ -1,0 +1,123 @@
+h1{
+    font-size: 45px;
+   padding: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav button {
+    text-align: right;
+}
+.nav-bar{
+    background-color: white;
+}
+.table
+{
+    /* background-color: rgb(197, 189, 189);
+    border: 1px solid black; */
+    margin-top: 25px;
+    width: 50%;
+    /* height: 80px;     */
+    border: 1px solid white;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,); 
+    position: absolute;
+    left: 50%;
+    right:50%;
+    transform:translate(-48%,0%);
+     
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 620px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+.employeetable{
+    overflow-y: scroll;
+}
+tr{
+    transition: all -2s ease-in;
+    cursor: pointer;
+    
+}
+th,td{
+    padding: 12px;
+    text-align:left;
+    border-bottom: 1px solid #ddd;
+   
+}
+th{
+    color: white;
+}
+td{
+    background-color: white;
+}
+.modallogout{
+    background-color: #1DC4BB;
+    color: white;
+}
+.submitbtn{
+    background-color: #1DC4BB;
+    color: white;
+}
+.updatebtn{
+    background-color: #1DC4BB;
+    color: white;
+}
+.header{
+
+    background-color: #1DC4BB;
+    color: white;
+}
+tbody tr:hover{
+     background-color: #f5f5f5;
+     transform: scale(1.02);
+     box-shadow: 2px 2px 12px rgba(0,0,0,0.2), -1px -1px 8px rgba(0,0,0,);  
+}
+.table-1{
+    width: 0 auto!important;
+    margin-left: auto; 
+  margin-right: auto;
+  
+  
+    /* transform:translate(48%,0%) */
+}
+th{
+    letter-spacing: 1px;
+}
+.addemployeebtn{
+   background-color: #1DC4BB;
+   color: white;
+}
+.logoutalert{
+   background-color: green;
+   width: 30%;
+    transform: translate(113%,50%);
+    justify-content: center;
+    color: white;
+}
+.Details{
+    font-size: 23px;
+}
+.editbtn{
+    background-color: #1DC4BB;
+    color: white;
+    margin: 8px;
+}
+.logoutbtn{
+    background-color: black;
+    color: white;
+}
+.employeedeleted{
+    background-color: grey;
+    width: 30%;
+    transform: translate(113%,50%);
+    justify-content: center;
+    color: white;
+}
+.nav-bar {
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}

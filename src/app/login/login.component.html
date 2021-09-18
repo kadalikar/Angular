@@ -1,0 +1,41 @@
+<div *ngIf="alert" class="alert submitalert alert-dismissible fade show" role="alert"> Successfully Login
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+</div>
+   <div class="image">
+	     <a href="https://tnumber.co/"><img src="https://avengersbucketimg.s3.ap-south-1.amazonaws.com/t-number/1.png" alt="logo"></a>
+	<div class="container pt-5 form">
+		<div class="row">
+			<div class="col-md-6 pb-5">
+				<!-- <img  class="image-2" src="https://image.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg"> --><img class="image-2" src="../assets/images/svgimage.svg"> </div>
+			<div class="col-md-4 pb-5">
+				<h2 class="text-centre pt-3 register">
+                 Register Form</h2>
+				<form [formGroup]="registerForm">
+					<div class="form-group">
+						<label class="col-form-label">Name:</label>
+						<input formControlName="name" type="text" class="form-control">
+						<div *ngIf="name.invalid && name.touched"> <small class="text-danger" *ngIf="name.errors?.required">username is requred</small>
+							<!-- <small class="text-danger" *ngIf ="name.errors?.required">username is required</small> --><small class="text-danger" *ngIf="name.errors?.minlength"> username must be minimum 4 letters </small>
+							<!-- <small class="text-danger" *ngIf ="name.errors?.forbiddenName">{{username.errors?.forbiddenName.value}} username is not Allowed  </small> --></div>
+					</div>
+					<div class="form-group">
+						<label class="col-form-label">password:</label>
+						<input formControlName="password" type="password" class="form-control">
+						<div *ngIf="password.invalid && password.touched">
+							<!-- <small class="text-danger"  *ngIf="password.invalid && password.touched">Password is required</small> --><small class="text-danger" *ngIf="password.errors?.required">password is requred</small>
+							<!-- <small class="text-danger" *ngIf ="name.errors?.required">username is required</small> --><small class="text-danger" *ngIf="password.errors?.minlength"> password must be minimum 5 letters </small>
+							<!-- <small class="text-danger" *ngIf ="name.errors?.forbiddenName">{{username.errors?.forbiddenName.value}} username is not Allowed  </small> --></div>
+					</div>
+					<div class="form-group">
+						<label class="col-form-label">Email:</label>
+						<input formControlName="Email" type="text" class="form-control"> <small class="text-danger" *ngIf="email.invalid && email.touched">Email is requred</small> </div>
+					<div class="form-group">
+						<label class="col-form-label">phone number:</label>
+						<input formControlName="number" type="text" class="form-control"> <small class="text-danger" *ngIf="number.invalid && number.touched">Number is requred</small> </div>
+					<div>
+						<button [disabled]="registerForm.invalid" type="button" class="btn submitbtn" (click)="ok()">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,103 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Successfully logout
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn modallogout" (click) = "ok()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="alert" class="alert logoutalert alert-dismissible fade show" role="alert"> Successfully logout
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+</div>
+<div class="background">
+	<div class="table-1">
+		<mat-toolbar class="nav-bar">
+			<div> <img src="https://avengersbucketimg.s3.ap-south-1.amazonaws.com/t-number/1.png" alt="logo">
+       </div> <span><button mat-flat-button  
+        type="button" class="btn addemployeebtn" 
+        data-toggle="modal" (click) = "clickaddemployee()" data-target="#exampleModal-1">Add Employee</button>
+      &nbsp;<button class="btn logoutbtn"  data-toggle="modal" data-target="#exampleModal" >LogOut</button> </span> </mat-toolbar>
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <table class="table table-bordered table-striped mb-0">
+			<thead class="header">
+				<tr>
+					<th>User ID</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Email</th>
+					<!-- <th>Number</th>  -->
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let users of employeeData">
+					<td>{{users.id}}</td>
+					<td>{{users.firstname}}</td>
+					<td>{{users.lastname}}</td>
+					<td>{{users.email}}</td>
+					<!-- <td>{{users.number}}</td> -->&nbsp;&nbsp;
+					<button mat-flat-button class="editbtn" type="button" data-toggle="modal" data-target="#exampleModal-1" (click)="onedit(users)">Edit</button>&nbsp;&nbsp; &nbsp;
+					<button mat-flat-button color="warn" type="button" (click)="deleteEmployee(users)">delete</button>
+				</tr>
+			</tbody>
+		</table>
+  </div>
+	</div>
+</div>
+<!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header"> &nbsp;
+				<h5 class="modal-title Details" id="exampleModalLabel">Employee Details </h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="formvalue">
+					<div class="form-group"> &nbsp;
+						<label for="exampleInputEmail1">ID</label>
+						<input type="text" formControlName="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID"> </div>
+					<div class="form-group"> &nbsp;
+						<label for="exampleInputEmail1">FirstName</label>
+						<input type="text" formControlName="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter FirstName"> </div>
+					<div class="form-group"> &nbsp;
+						<label for="exampleInputPassword1">lastName</label>
+						<input type="text" formControlName="lastname" class="form-control" id="exampleInputPassword1" placeholder="LastName"> </div>
+					<div class="form-group"> &nbsp;
+						<label for="exampleInputEmail1">Email</label>
+						<input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email"> </div>
+					<!-- <div class="form-group">
+                    <label for="exampleInputEmail1">Number</label>
+                    <input type="email"  formControlName="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number">
+                  </div> -->
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" *ngIf ="showadd" class="btn submitbtn" (click)="postemployeedetails()">Submit</button>
+				<button type="button" *ngIf ="showupdate" class="btn updatebtn" id="cancel" (click)="updateemployeedetails()">Update</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+ 
